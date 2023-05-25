@@ -52,8 +52,8 @@ typedef struct instruction_s
  */
 typedef struct var_s
 {
-int len_queue;
-size_t len_stack;
+	int len_queue;
+	size_t len_stack;
 } var_t;
 
 extern var_t var;

@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		oper = strtok(lineptr, "\n\t\r ");
 	if (oper != NULL && oper[0] != '#')
 	{
-		call_oper(&top, oper, line);
+		call_oper(top, oper, line);
 	}
 	}
 	exit(EXIT_SUCCESS);
