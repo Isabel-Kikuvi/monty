@@ -9,8 +9,8 @@ void _push(stack_t **top, unsigned int line)
 {
 	char *str;
 	int n;
-	str = strtok(NULL, "\n\t\r ");
 
+	str = strtok(NULL, "\n\t\r ");
 	if (str == NULL || _isdigit(str))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line);
