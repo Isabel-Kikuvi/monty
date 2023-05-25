@@ -71,5 +71,5 @@ void _pint(stack_t **stack, unsigned int line);
 void _swap(stack_t **stack, unsigned int line __attribute__ ((unused)));
 void _add(stack_t **stack, unsigned int line);
 void _nop(stack_t **stack __attribute__ ((unused)), unsigned int line);
-
+void _sub(stack_t **stack, unsigned int line)
 #endif
