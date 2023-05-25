@@ -66,4 +66,6 @@ void close_myfile(int stat, void *arg);
 void call_oper(stack_t **stack, char *oper, unsigned int line);
 void _pall(stack_t **stack, unsigned int line);
 void _push(stack_t **stack, unsigned int line);
+void _pop(stack_t **stack, unsigned int line);
+void _pint(stack_t **stack, unsigned int line);
 #endif
