@@ -18,11 +18,6 @@ instruction_t all_opers[] = {
 {"swap", _swap},
 {"add", _add},
 {"nop", _nop},
-{"sub", _sub},
-{"div", _div},
-{"mul", _mul},
-{"mod", _mod},
-{"pchar", _pchar},
 {NULL, NULL}
 };
 for (c = 0; all_opers[c].opcode != NULL; c++)
