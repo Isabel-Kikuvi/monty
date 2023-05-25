@@ -12,7 +12,6 @@ var_t var;
  * @argv: array of command line arguments
  * Return: exit codes for failure or 0 Success
  */
-
 int main(int argc, char *argv[])
 {
 	stack_t *stack = NULL;
@@ -35,7 +34,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while (getline(&lineptr, &length, myfile) != -1)
 	{
 		line++;
@@ -47,14 +45,12 @@ int main(int argc, char *argv[])
 	}
 	if (lineptr != NULL)
 		free(lineptr);
-
 	while (stack != NULL)
 	{
 		tmp = stack->next;
 		free(stack);
 		stack = tmp;
 	}
-
 	fclose(myfile);
 
 	exit(EXIT_SUCCESS);

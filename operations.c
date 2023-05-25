@@ -13,6 +13,7 @@ int c;
 instruction_t all_opers[] = {
 {"push", _push},
 {"pall", _pall},
+{"pint", _pint},
 {NULL, NULL}
 };
 for (c = 0; all_opers[c].opcode != NULL; c++)
