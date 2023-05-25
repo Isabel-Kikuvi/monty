@@ -69,4 +69,5 @@ void _push(stack_t **stack, unsigned int line);
 void _pop(stack_t **stack, unsigned int line);
 void _pint(stack_t **stack, unsigned int line);
 void _swap(stack_t **stack, unsigned int line __attribute__ ((unused)));
+void _add(stack_t **stack, unsigned int line);
 #endif
