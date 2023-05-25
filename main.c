@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-	stack_t *top = NULL;
+	stack_t *stack = NULL;
 	stack_t *tmp;
 	unsigned int line = 0;
 	FILE *myfile = NULL;
@@ -40,17 +40,17 @@ int main(int argc, char *argv[])
 		oper = strtok(lineptr, "\n\t\r ");
 		if (oper != NULL && oper[0] != '#')
 		{
-			call_oper(&top, oper, line);
+			call_oper(&stack, oper, line);
 		}
 	}
 	if (lineptr != NULL)
 		free(lineptr);
 
-	while (top != NULL)
+	while (stack != NULL)
 	{
-		tmp = top->next;
-		free(top);
-		top = tmp;
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
 
 	fclose(myfile);

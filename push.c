@@ -2,10 +2,10 @@
 
 /**
  * _push - pushes a data to a stack
- * @top: pointer to top node of a stack
+ * @stack: pointer to top node of a stack
  * @line: current file line num calling instruction
  */
-void _push(stack_t **top, unsigned int line)
+void _push(stack_t **stack, unsigned int line)
 {
 	char *str;
 	int n;
@@ -18,7 +18,7 @@ void _push(stack_t **top, unsigned int line)
 	}
 	n = atoi(str);
 
-	if (!add_node(top, n))
+	if (!add_node(stack, n))
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
