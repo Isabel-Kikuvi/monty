@@ -13,7 +13,8 @@
 
 int main(int argc, char *argv[])
 {
-	stack_t **top = NULL;
+	stack_t *top = NULL;
+	stack_t *tmp;
 	unsigned int line = 0;
 	FILE *myfile = NULL;
 	char *lineptr = NULL, *oper = NULL;
@@ -33,18 +34,26 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	on_exit(free_lineptr, &lineptr);
-	on_exit(free_stack, &top);
-	on_exit(close_myfile, myfile);
-
 	while (getline(&lineptr, &length, myfile) != -1)
 	{
 		line++;
 		oper = strtok(lineptr, "\n\t\r ");
-	if (oper != NULL && oper[0] != '#')
+		if (oper != NULL && oper[0] != '#')
+		{
+			call_oper(&top, oper, line);
+		}
+	}
+	if (lineptr != NULL)
+		free(lineptr);
+
+	while (top != NULL)
 	{
-		call_oper(top, oper, line);
+		tmp = top->next;
+		free(top);
+		top = tmp;
 	}
-	}
+
+	fclose(myfile);
+
 	exit(EXIT_SUCCESS);
-	}
+}
