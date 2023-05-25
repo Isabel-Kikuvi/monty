@@ -74,5 +74,6 @@ void _nop(stack_t **stack, unsigned int line);
 void _div(stack_t **stack, unsigned int line);
 void _mul(stack_t **stack, unsigned int line);
 void _mod(stack_t **stack, unsigned int line);
+void _pchar(stack_t **stack, unsigned int line);
 
 #endif
