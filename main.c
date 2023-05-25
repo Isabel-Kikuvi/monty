@@ -4,6 +4,8 @@
 #include <string.h>
 #include "monty.h"
 
+var_t var;
+
 /**
  * main - monty bytecode interpreter
  * @argc: command line arguments
