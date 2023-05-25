@@ -10,6 +10,8 @@
 #include <unistd.h>
 #include <ctype.h>
 
+#define  _POSIX_C_SOURCE 200809L
+
 #define STACK 0
 #define QUEUE 1
 
@@ -56,4 +58,12 @@ size_t len_stack;
 
 extern var_t var;
 
+int _isdigit(char *str);
+stack_t *add_node(stack_t **top, const int n);
+void free_stack(int stat, void *arg);
+void free_lineptr(int stat, void *arg);
+void close_myfile(int stat, void *arg);
+void call_oper(stack_t **top, char *oper, unsigned int line);
+void _pall(stack_t **top, unsigned int line);
+void _push(stack_t **top, unsigned int line);
 #endif
